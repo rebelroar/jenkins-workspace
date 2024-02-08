@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        docker {tomcat:jre21-temurin}
+        docker {image 'tomcat:jre21-temurin'}
     }
     stages{
         stage('Testing version'){
