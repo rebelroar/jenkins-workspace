@@ -5,9 +5,11 @@ pipeline{
     stages{
         stage('Testing version'){
             steps{
-                ls,
-                ls /,
-                sh './version.sh'
+                sh '''
+                ls
+                ls ./
+                ./version.sh
+                '''
             }
         }
     }
