@@ -5,11 +5,7 @@ pipeline{
     stages{
         stage('Testing version'){
             steps{
-                sh '''
-                ls
-                ls ./
-                cat README.md
-                '''
+                sh 'tomcat --version'
             }
         }
     }
