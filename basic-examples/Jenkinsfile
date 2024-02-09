@@ -8,7 +8,7 @@ pipeline{
                 sh '''
                 ls
                 ls ./
-                ./version.sh
+                cat README.md
                 '''
             }
         }
