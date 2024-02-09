@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage('Testing version'){
             steps{
-                sh 'tomcat --version'
+                sh './version.sh'
             }
         }
     }
