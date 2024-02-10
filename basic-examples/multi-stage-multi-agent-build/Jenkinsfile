@@ -1,0 +1,30 @@
+pipeline{
+    agent none
+    stages{
+        stage('Web-apps'){
+            agent{
+                docker {image 'tomcat:jre21-temurin'}
+            }
+            steps{
+                sh 'cat /usr/local/tomcat/RELEASE-NOTES | grep "Apache Tomcat Version"'
+            }
+        }
+        stage('maven-builds'){
+            agent{
+                docker {image 'maven:amazoncorretto'}
+            }
+            steps{
+                sh 'maven --version',
+                sh 'java --version'
+            }
+        }
+        stage('Database'){
+            agent{
+                docker {image 'postgres:16-bullseye'}
+            }
+            steps{
+                sh 'postgres --version'
+            }
+        }
+    }
+}
