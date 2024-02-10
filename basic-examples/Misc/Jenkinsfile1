@@ -1,10 +1,9 @@
 pipeline{
-    agent none
+    agent{
+        docker {image 'tomcat:jre21-temurin'}
+    }
     stages{
         stage('Tomcat version'){
-            agent{
-                docker {image 'tomcat:jre21-temurin'}
-            }
             steps{
                 sh 'ls /usr/local'
 
@@ -21,9 +20,6 @@ pipeline{
             }
         }
         stage('Java version'){
-            agent{
-                docker {image 'tomcat:jre21-temurin'}
-            }
             steps{
                 sh 'java --version'
             }
