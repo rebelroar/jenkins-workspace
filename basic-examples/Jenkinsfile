@@ -5,8 +5,9 @@ pipeline{
     stages{
         stage('Tomcat version'){
             steps{
-                sh 'cat /usr/local/tomcat/RELEASE-NOTES | grep "Apache Tomcat Version"'
-                sh 'cat ls'
+                sh '/usr/local/tomcat/RELEASE-NOTES | grep "Apache Tomcat Version"'
+                sh 'ls'
+                sh 'pwd'
             }
         }
     }
