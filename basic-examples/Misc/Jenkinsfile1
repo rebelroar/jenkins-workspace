@@ -20,5 +20,13 @@ pipeline{
                 '''
             }
         }
+        stage('Java version'){
+            agent{
+                docker {image 'tomcat:jre21-temurin'}
+            }
+            steps{
+                sh 'java --version'
+            }
+        }
     }
 }
