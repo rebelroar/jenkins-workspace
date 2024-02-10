@@ -24,6 +24,8 @@ pipeline{
             }
             steps{
                 sh 'postgres --version'
+                sh 'psql -U"postgres"'
+                sh '\dn+'
             }
         }
     }
