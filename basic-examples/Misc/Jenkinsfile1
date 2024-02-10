@@ -16,7 +16,11 @@ pipeline{
                 //below command runs inside container
                 sh 'cat /usr/local/tomcat/RELEASE-NOTES | grep "Apache Tomcat Version"'
 
-                sh 'ls /usr/local'
+                sh '''
+                cd
+                pwd
+                ls
+                '''
             }
         }
     }
