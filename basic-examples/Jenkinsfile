@@ -1,12 +1,14 @@
 pipeline{
-    agent{
-        docker {image 'tomcat:jre21-temurin'}
-    }
+    agent none
     stages{
         stage('Tomcat version'){
+            agent{
+                docker {image 'tomcat:jre21-temurin'}
+            }
             steps{
                 sh 'cat /usr/local/tomcat/RELEASE-NOTES | grep "Apache Tomcat Version"'
                 sh 'ls'
+                // 'ls' and 'pwd' will run in jenkins workspace
                 sh 'pwd'
             }
         }
