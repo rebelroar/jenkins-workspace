@@ -14,7 +14,7 @@ pipeline{
                 docker {image 'maven:amazoncorretto'}
             }
             steps{
-                sh 'maven --version',
+                sh 'mvn --version'
                 sh 'java --version'
             }
         }
