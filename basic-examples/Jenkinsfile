@@ -3,9 +3,9 @@ pipeline{
         docker {image 'tomcat:jre21-temurin'}
     }
     stages{
-        stage('Testing version'){
+        stage('Tomcat version'){
             steps{
-                sh 'tomcat --version'
+                sh 'cat /usr/local/tomcat/RELEASE-NOTES'
             }
         }
     }
